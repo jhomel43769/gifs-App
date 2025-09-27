@@ -10,4 +10,5 @@ giphyApiKey: 'GZzpRLcmI8ayXy34LnMDIcCCVIMciOAk',
 
 //urls 
 giphyUrl: 'https://api.giphy.com/v1'
+
 };

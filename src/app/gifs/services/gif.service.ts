@@ -15,6 +15,8 @@ export class GifService {
   trendingGif = signal<Gif[]>([])
   trendingGifLoading = signal(true)
 
+  searchGif = signal<Gif[]> ([]) 
+
   constructor () {
     this.loadTrendingGifs()
   }
@@ -33,4 +35,21 @@ export class GifService {
       console.log({gifs})
     })
   }
+
+  searchGifs(query: string) {
+    this.http.get<GiphyResponse>(`${environment.giphyUrl}/gifs/search`, {
+      params: {
+        api_key: environment.giphyApiKey,
+        limit:20,
+        q: query,
+      }
+    }).subscribe((res) => {
+      const gifs = GifMapper.mapGiphyItemsToGifArray(res.data)
+
+      console.log({search: gifs})
+    })
+  }
+
+
+
 }

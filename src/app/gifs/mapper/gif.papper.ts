@@ -6,11 +6,13 @@ export class GifMapper {
         return {
             id: item.id,
             title: item.title,
-            url: item.url
+            url: item.images.fixed_height.url 
         };
     };
 
     static mapGiphyItemsToGifArray(items: GiphyItem[]): Gif[] {
         return items.map(this.mapGiphItemToGif)
     }
+
+
 }
