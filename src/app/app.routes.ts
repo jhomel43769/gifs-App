@@ -17,7 +17,7 @@ export const routes: Routes = [
           import('./gifs/pages/search-page/search-page.component'),
       },
       {
-        path: 'history:query',
+        path: 'history/:query',
         loadComponent: () => 
           import('./gifs/pages/gif-history/gif-history.component')
       }
