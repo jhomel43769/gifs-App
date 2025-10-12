@@ -3,7 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "",
     "paths": {
       "@env/*": ["src/environments/*"]
     },
